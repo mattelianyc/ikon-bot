@@ -2,9 +2,9 @@ require('dotenv').config()
 const puppeteer = require('puppeteer');
 
 const booking = {
-  date: "Sat Jan 16 2021",
-  mountain: "Winter Park Resort",
-  attemptsBeforeFail: 100
+  date: "Fri Feb 05 2021",
+  mountain: "Arapahoe Basin",
+  attemptsBeforeFail: 1000
 };
 
 (async () => {
@@ -37,7 +37,7 @@ const booking = {
   for (let index = 0; index < booking.attemptsBeforeFail; index++) {
 
     await page.waitFor(2000);
-    
+
     await page.type('input', `${booking.mountain}`);
   
     await page.waitFor(2000);
